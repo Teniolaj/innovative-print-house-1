@@ -1,0 +1,155 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "Playfair";
+  src: local("Playfair Display");
+}
+
+@theme inline {
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", "Helvetica Neue", system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-magenta: var(--magenta);
+  --color-cyan: var(--cyan);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand palette inspired by the logo + inspo: deep ink + gold + CMYK pops */
+  --background: oklch(0.16 0.012 60); /* deep warm charcoal */
+  --foreground: oklch(0.96 0.01 80);
+
+  --ink: oklch(0.12 0.01 60);
+  --ink-soft: oklch(0.21 0.014 60);
+
+  --gold: oklch(0.82 0.16 82); /* warm gold like inspo */
+  --gold-soft: oklch(0.72 0.14 75);
+
+  --cyan: oklch(0.78 0.13 220);
+  --magenta: oklch(0.65 0.24 350);
+
+  --card: oklch(0.20 0.012 60);
+  --card-foreground: oklch(0.96 0.01 80);
+  --popover: oklch(0.20 0.012 60);
+  --popover-foreground: oklch(0.96 0.01 80);
+
+  --primary: oklch(0.82 0.16 82);
+  --primary-foreground: oklch(0.15 0.01 60);
+  --secondary: oklch(0.25 0.012 60);
+  --secondary-foreground: oklch(0.96 0.01 80);
+
+  --muted: oklch(0.23 0.012 60);
+  --muted-foreground: oklch(0.7 0.02 70);
+  --accent: oklch(0.82 0.16 82);
+  --accent-foreground: oklch(0.15 0.01 60);
+
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --border: oklch(0.3 0.01 60 / 60%);
+  --input: oklch(0.3 0.01 60 / 60%);
+  --ring: oklch(0.82 0.16 82);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.01em; }
+}
+
+/* Hero zoom loop */
+@keyframes heroZoom {
+  0%   { transform: scale(1.15); }
+  50%  { transform: scale(1.0); }
+  100% { transform: scale(1.15); }
+}
+.hero-zoom { animation: heroZoom 22s ease-in-out infinite; }
+
+/* Gold shimmer text */
+.gold-shimmer {
+  background: linear-gradient(100deg, #c89d3a 0%, #f5d97a 25%, #fff3c4 45%, #f5d97a 65%, #c89d3a 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+/* Floating CMYK orbs */
+@keyframes float-y {
+  0%,100% { transform: translateY(0) }
+  50% { transform: translateY(-22px) }
+}
+.float-y { animation: float-y 8s ease-in-out infinite; }
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee { animation: marquee 38s linear infinite; }
+
+/* Grain */
+.grain::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 3px 3px;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.diagonal-cut-top {
+  clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+}
+.diagonal-cut-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(245, 217, 122, 0.5);
+  color: transparent;
+}
