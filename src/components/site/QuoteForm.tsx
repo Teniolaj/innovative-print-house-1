@@ -11,7 +11,7 @@ const schema = z.object({
   email: z.string().trim().email("Enter a valid email").max(120),
   phone: z.string().trim().min(7, "Enter a valid phone").max(20),
   service: z.string().min(1, "Pick a service"),
-  quantity: z.string().trim().max(40).optional().or(z.literal("")),
+  quantity: z.string().trim().max(40),
   details: z.string().trim().min(10, "Tell us a little more (min 10 chars)").max(800),
 });
 
