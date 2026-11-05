@@ -17,10 +17,10 @@ export function Footer() {
         <div>
           <div className="text-[10px] uppercase tracking-[0.3em] text-white/45 mb-4">Explore</div>
           <ul className="space-y-2 text-white/75">
-            <li><a href="#services" className="hover:text-gold">Services</a></li>
-            <li><a href="#work" className="hover:text-gold">Selected Work</a></li>
-            <li><a href="#quote" className="hover:text-gold">Get a Quote</a></li>
-            <li><a href="#contact" className="hover:text-gold">Contact</a></li>
+            <li><a href="/#services" className="hover:text-gold">Services</a></li>
+            <li><a href="/works" className="hover:text-gold">Selected Work</a></li>
+            <li><a href="/#quote" className="hover:text-gold">Get a Quote</a></li>
+            <li><a href="/#contact" className="hover:text-gold">Contact</a></li>
           </ul>
         </div>
         <div>

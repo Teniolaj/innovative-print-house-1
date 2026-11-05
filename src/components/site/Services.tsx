@@ -7,7 +7,7 @@ const services = [
     id: "branding",
     title: "Corporate Branding",
     icon: Palette,
-    blurb: "Complete brand identity systems — logos, guidelines, stationery and rollouts that turn companies into icons.",
+    blurb: "Complete brand identity systems â€” logos, guidelines, stationery and rollouts that turn companies into icons.",
     bullets: ["Logo & identity systems", "Brand guidelines", "Stationery suite"],
   },
   {
@@ -19,23 +19,23 @@ const services = [
   },
   {
     id: "diary",
-    title: "Cooperate Diary",
+    title: "Corporate Diaries",
     icon: BookMarked,
-    blurb: "Premium leather and hardback diaries with embossed branding — the year-long handshake with your clients.",
+    blurb: "Premium leather and hardback diaries with embossed branding â€” the year-long handshake with your clients.",
     bullets: ["Custom embossing", "Foil stamping", "Bulk corporate runs"],
   },
   {
     id: "digital",
     title: "Digital Printing",
     icon: Printer,
-    blurb: "Vivid, large-format and short-run digital printing — banners, brochures, business cards, you name it.",
+    blurb: "Vivid, large-format and short-run digital printing â€” banners, brochures, business cards, you name it.",
     bullets: ["Banners & posters", "Brochures & cards", "Short-run on demand"],
   },
   {
     id: "tshirt",
     title: "T-Shirt Printing",
     icon: Shirt,
-    blurb: "DTF, screen and sublimation printing on premium garments — for staff uniforms, events and merch drops.",
+    blurb: "DTF, screen and sublimation printing on premium garments â€” for staff uniforms, events and merch drops.",
     bullets: ["DTF & screen print", "Event uniforms", "Custom merch"],
   },
   {
@@ -59,13 +59,13 @@ export function Services() {
             <div className="text-[11px] uppercase tracking-[0.35em] text-gold/90 flex items-center gap-3">
               <span className="h-px w-10 bg-gold/70" /> What we do
             </div>
-            <h2 className="mt-4 font-display text-4xl sm:text-5xl lg:text-6xl max-w-2xl">
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl max-w-2xl">
               Six crafts. <span className="italic gold-shimmer">One press.</span>
             </h2>
           </div>
           <p className="max-w-md text-white/65">
             Hover or tap any service to dive in. Each one is delivered in-house by our team of designers,
-            printers and finishers — no middlemen, no surprises.
+            printers and finishers â€” no middlemen, no surprises.
           </p>
         </div>
 
@@ -81,18 +81,18 @@ export function Services() {
                     onMouseEnter={() => setActive(s.id)}
                     onFocus={() => setActive(s.id)}
                     onClick={() => setActive(s.id)}
-                    className="group relative w-full text-left py-7 flex items-center gap-6"
+                    className="group relative w-full text-left py-5 sm:py-6 flex items-center gap-3 sm:gap-5"
                   >
                     <span className={`font-display text-sm tabular-nums transition-colors ${isActive ? "text-gold" : "text-white/40"}`}>
                       0{i + 1}
                     </span>
-                    <span className={`grid place-items-center h-12 w-12 rounded-full border transition-all duration-500 ${isActive ? "border-gold bg-gold/10 text-gold" : "border-white/15 text-white/60"}`}>
+                    <span className={`grid place-items-center h-10 w-10 sm:h-12 sm:w-12 shrink-0 rounded-full border transition-all duration-500 ${isActive ? "border-gold bg-gold/10 text-gold" : "border-white/15 text-white/60"}`}>
                       <Icon className="h-5 w-5" />
                     </span>
-                    <span className={`font-display text-3xl sm:text-4xl lg:text-5xl transition-all duration-500 ${isActive ? "text-white translate-x-2" : "text-white/45"}`}>
+                    <span className={`font-display text-xl sm:text-2xl lg:text-3xl transition-all duration-500 ${isActive ? "text-white translate-x-2" : "text-white/45"}`}>
                       {s.title}
                     </span>
-                    <ArrowUpRight className={`ml-auto h-6 w-6 transition-all duration-500 ${isActive ? "text-gold opacity-100 translate-x-0" : "text-white/30 opacity-0 -translate-x-3"}`} />
+                    <ArrowUpRight className={`ml-auto h-5 w-5 shrink-0 transition-all duration-500 ${isActive ? "text-gold opacity-100 translate-x-0" : "text-white/30 opacity-0 -translate-x-3"}`} />
                     {/* Gold sweep underline */}
                     <span
                       className={`absolute left-0 right-0 bottom-0 h-px origin-left bg-gradient-to-r from-gold via-gold-soft to-transparent transition-transform duration-700 ${isActive ? "scale-x-100" : "scale-x-0"}`}
@@ -117,9 +117,9 @@ export function Services() {
                   className="relative"
                 >
                   <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/5 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-gold">
-                    Service · {activeService.id}
+                    Service Â· {activeService.id}
                   </div>
-                  <h3 className="mt-5 font-display text-3xl sm:text-4xl">{activeService.title}</h3>
+                  <h3 className="mt-5 font-display text-2xl sm:text-3xl">{activeService.title}</h3>
                   <p className="mt-4 text-white/70 leading-relaxed">{activeService.blurb}</p>
                   <ul className="mt-6 space-y-2.5">
                     {activeService.bullets.map((b) => (

@@ -78,7 +78,7 @@ export function QuoteForm() {
           <div className="text-[11px] uppercase tracking-[0.35em] text-gold/90 flex items-center gap-3">
             <span className="h-px w-10 bg-gold/70" /> Custom Quote
           </div>
-          <h2 className="mt-4 font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.05]">
             Tell us about <br />
             <span className="italic gold-shimmer">your project.</span>
           </h2>

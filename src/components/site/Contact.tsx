@@ -14,7 +14,7 @@ export function Contact() {
           <div className="text-[11px] uppercase tracking-[0.35em] text-gold/90 flex items-center gap-3">
             <span className="h-px w-10 bg-gold/70" /> Come say hi
           </div>
-          <h2 className="mt-4 font-display text-4xl sm:text-5xl lg:text-6xl">
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">
             Visit the <span className="italic gold-shimmer">studio.</span>
           </h2>
           <p className="mt-5 max-w-md text-white/65">

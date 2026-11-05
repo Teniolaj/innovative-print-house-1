@@ -42,7 +42,7 @@ export function Hero() {
           Innovative Print House · Ghana
         </motion.div>
 
-        <h1 className="mt-6 font-display text-[44px] leading-[1.02] sm:text-6xl md:text-7xl lg:text-[96px] font-bold max-w-5xl">
+        <h1 className="mt-6 font-display text-4xl leading-[1.12] sm:text-5xl md:text-6xl lg:text-7xl font-bold max-w-5xl">
           <SplitWord text="Bold" delay={0.1} />{" "}
           <SplitWord text="ideas," delay={0.25} />
           <br className="hidden sm:block" />
@@ -52,7 +52,7 @@ export function Hero() {
 
         <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-7 max-w-xl text-base sm:text-lg text-white/70 leading-relaxed"
+          className="mt-7 max-w-xl text-sm sm:text-base text-white/70 leading-relaxed"
         >
           We craft premium corporate branding, publications and merchandise that make your business
           impossible to ignore. From a single business card to a nationwide campaign — we print it right.
@@ -87,7 +87,7 @@ export function Hero() {
             { v: "98%", l: "Repeat Clients" },
           ].map((s) => (
             <div key={s.l} className="bg-ink/40 p-5 sm:p-6">
-              <div className="font-display text-3xl sm:text-4xl text-gold">{s.v}</div>
+              <div className="font-display text-2xl sm:text-3xl text-gold">{s.v}</div>
               <div className="mt-1 text-[11px] uppercase tracking-[0.2em] text-white/55">{s.l}</div>
             </div>
           ))}
